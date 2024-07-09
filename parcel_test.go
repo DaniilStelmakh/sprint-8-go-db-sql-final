@@ -68,7 +68,7 @@ func TestAddGetDelete(t *testing.T) {
 
 	_, err = store.Get(id)
 	require.Error(t, err)
-	assert.Equal(t, err, sql.ErrNoRows)
+	assert.EqualError(t, err, sql.ErrNoRows.Error())
 
 }
 
